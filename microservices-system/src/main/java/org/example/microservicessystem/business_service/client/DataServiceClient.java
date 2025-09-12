@@ -1,7 +1,12 @@
 package org.example.microservicessystem.business_service.client;
 
+import org.example.microservicessystem.business_service.dto.CategoriaDTO;
+import org.example.microservicessystem.business_service.dto.InventarioDTO;
+import org.example.microservicessystem.business_service.dto.ProductoDTO;
+import org.example.microservicessystem.business_service.dto.ProductoRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @FeignClient(name = "data-service", url = "${data.service.url}")
 public interface DataServiceClient {
