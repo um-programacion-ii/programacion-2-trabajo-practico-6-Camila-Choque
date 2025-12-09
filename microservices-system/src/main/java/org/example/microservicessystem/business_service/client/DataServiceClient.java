@@ -1,5 +1,4 @@
 package org.example.microservicessystem.business_service.client;
-
 import org.example.microservicessystem.business_service.dto.CategoriaDTO;
 import org.example.microservicessystem.business_service.dto.InventarioDTO;
 import org.example.microservicessystem.business_service.dto.ProductoDTO;
