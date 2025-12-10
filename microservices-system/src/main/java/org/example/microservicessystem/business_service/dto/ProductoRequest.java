@@ -12,5 +12,6 @@ public class ProductoRequest {
     private String nombre;
     private String descripcion;
     private BigDecimal precio;
-    //Duda de que atributos colocar
+    private String categoriaNombre;
+    private Integer stock;
 }
