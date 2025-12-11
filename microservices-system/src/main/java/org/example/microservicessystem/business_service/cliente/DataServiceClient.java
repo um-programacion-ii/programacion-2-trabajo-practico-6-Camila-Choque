@@ -1,4 +1,4 @@
-package org.example.microservicessystem.business_service.client;
+package org.example.microservicessystem.business_service.cliente;
 import org.example.microservicessystem.business_service.dto.CategoriaDTO;
 import org.example.microservicessystem.business_service.dto.InventarioDTO;
 import org.example.microservicessystem.business_service.dto.ProductoDTO;
@@ -33,4 +33,7 @@ public interface DataServiceClient {
 
     @GetMapping("/data/inventario/stock-bajo")
     List<InventarioDTO> obtenerProductosConStockBajo();
+
+    @GetMapping("/data/inventario")
+    List<InventarioDTO> obtenerTodosLosInventarios();
 }

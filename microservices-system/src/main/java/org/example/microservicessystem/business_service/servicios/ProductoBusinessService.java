@@ -1,10 +1,10 @@
-package org.example.microservicessystem.business_service.service;
+package org.example.microservicessystem.business_service.servicios;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.example.microservicessystem.business_service.Excepciones.MicroserviceCommunicationException;
 import org.example.microservicessystem.business_service.Excepciones.ProductoNoEncontradoException;
 import org.example.microservicessystem.business_service.Excepciones.ValidacionNegocioException;
-import org.example.microservicessystem.business_service.client.DataServiceClient;
+import org.example.microservicessystem.business_service.cliente.DataServiceClient;
 import org.example.microservicessystem.business_service.dto.ProductoDTO;
 import org.example.microservicessystem.business_service.dto.ProductoRequest;
 import org.springframework.stereotype.Service;
@@ -42,7 +42,6 @@ public class ProductoBusinessService {
     }
 
     public ProductoDTO crearProducto(ProductoRequest request) {
-        // Validaciones de negocio
         validarProducto(request);
 
         try {
@@ -62,4 +61,8 @@ public class ProductoBusinessService {
             throw new ValidacionNegocioException("El stock no puede ser negativo");
         }
     }
+    public List<ProductoDTO> obtenerProductosPorCategoria(String nombre) {
+        return dataServiceClient.obtenerProductosPorCategoria(nombre);
+    }
+
 }

@@ -1,5 +1,4 @@
 package org.example.microservicessystem.data_service.entidades;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
