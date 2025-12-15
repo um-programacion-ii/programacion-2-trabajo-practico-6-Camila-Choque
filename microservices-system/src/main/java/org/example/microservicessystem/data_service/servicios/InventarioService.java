@@ -46,6 +46,7 @@ public class InventarioService {
     }
 
     public List<Inventario> obtenerProductosConStockBajo() {
-        return inventarioRepository.findByStockLessThanEqual(5);
+
+        return inventarioRepository.findByCantidadLessThanEqual(5);
     }
 }

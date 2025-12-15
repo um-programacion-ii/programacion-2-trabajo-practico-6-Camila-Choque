@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface InventarioRepository extends JpaRepository<Inventario, Long> {
 
-    List<Inventario> findByStockLessThanEqual(int cantidad);
+    List<Inventario> findByCantidadLessThanEqual(int cantidad);
 }
