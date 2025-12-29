@@ -1,5 +1,7 @@
 package org.example.microservicessystem.data_service.controller;
 import jakarta.validation.Valid;
+import org.example.microservicessystem.business_service.dto.ProductoDTO;
+import org.example.microservicessystem.business_service.dto.ProductoRequest;
 import org.example.microservicessystem.data_service.entidades.Inventario;
 import org.example.microservicessystem.data_service.entidades.Producto;
 import org.example.microservicessystem.data_service.servicios.CategoriaService;
@@ -39,9 +41,10 @@ public class DataController {
 
     @PostMapping("/productos")
     @ResponseStatus(HttpStatus.CREATED)
-    public Producto crearProducto(@Valid @RequestBody Producto producto) {
-        return productoService.guardar(producto);
+    public ProductoDTO crearProducto(@RequestBody ProductoRequest dto) {
+        return productoService.guardarDesdeDTO(dto);
     }
+
 
     @PutMapping("/productos/{id}")
     public Producto actualizarProducto(@PathVariable Long id, @Valid @RequestBody Producto producto) {

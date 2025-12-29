@@ -40,8 +40,9 @@ public class ProductoBusinessService {
             throw new MicroserviceCommunicationException("Error de comunicación con el servicio de datos");
         }
     }
-
+    //cambio
     public ProductoDTO crearProducto(ProductoRequest request) {
+        System.out.printf("probando: %s", request);
         validarProducto(request);
 
         try {

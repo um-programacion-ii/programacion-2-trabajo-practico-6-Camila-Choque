@@ -3,6 +3,7 @@ import org.example.microservicessystem.business_service.dto.CategoriaDTO;
 import org.example.microservicessystem.business_service.dto.InventarioDTO;
 import org.example.microservicessystem.business_service.dto.ProductoDTO;
 import org.example.microservicessystem.business_service.dto.ProductoRequest;
+import org.example.microservicessystem.data_service.entidades.Producto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -36,4 +37,7 @@ public interface DataServiceClient {
 
     @GetMapping("/data/inventario")
     List<InventarioDTO> obtenerTodosLosInventarios();
+
+    @PostMapping("/productos")
+    Producto guardar(@RequestBody Producto producto);
 }

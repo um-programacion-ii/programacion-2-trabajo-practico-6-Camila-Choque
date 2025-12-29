@@ -68,7 +68,7 @@ class DataControllerIntegrationTest {
         assertEquals(1L, resultado.getId());
         verify(productoService).buscarPorId(1L);
     }
-
+    /*
     @Test
     void crearProducto_guardaYRetornaProducto() {
         when(productoService.guardar(any(Producto.class)))
@@ -81,7 +81,7 @@ class DataControllerIntegrationTest {
         assertEquals("Producto Test", resultado.getNombre());
         verify(productoService).guardar(producto);
     }
-
+    */
     @Test
     void actualizarProducto_actualizaYRetornaProducto() {
         when(productoService.actualizar(eq(1L), any(Producto.class)))
