@@ -109,8 +109,8 @@ Desarrollar un sistema de microservicios utilizando Spring Boot y Feign, impleme
 > 💡 **Nota**: Esta estimación considera la complejidad de configurar microservicios, comunicación entre servicios con Feign, múltiples bases de datos y Docker. El tiempo incluye el aprendizaje de conceptos de microservicios y Spring Cloud.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Camila Choque
+- **Legajo**: 62069
 
 > ⚠️ **IMPORTANTE**: Este trabajo práctico se realiza **INDIVIDUALMENTE**. Aunque se utilizan herramientas de colaboración como Pull Requests y Code Review, estas son para mantener buenas prácticas de desarrollo y un historial ordenado. Todo el desarrollo debe ser realizado por el mismo estudiante.
 
@@ -142,6 +142,64 @@ Desarrollar un sistema de microservicios utilizando Spring Boot y Feign, impleme
 - JUnit 5.10.1
 - Mockito 5.8.0
 - Git y GitHub
+  
+## ▶️ Ejecucion 
+### Clonar el repositorio 
+     git clone 
+### Navegar al directorio correspondiente
+    cd microservices-system/
+    
+## 🐳 Instrucciones para Docker
+### Levantar MySQL y PostgreSQL
+    docker compose up -d
+
+### Verificar que los contenedores estén corriendo
+    docker compose ps
+
+### Ver logs de los contenedores
+    docker compose logs -f
+
+### Detener contenedores
+    docker compose down
+
+### Detener y eliminar volúmenes
+    docker compose down -v
+## 📘 Documentación de Endpoints
+### 🗄️ Microservicio de Datos (data-service)
+| Método     | Endpoint                             | Descripción                       |
+| ---------- | ------------------------------------ | --------------------------------- |
+| 🔍 GET     | `/data/productos`                    | Lista todos los productos         |
+| 🔍 GET     | `/data/productos/id/{id}`            | Obtiene un producto por ID        |
+| 🔍 GET     | `/data/productos/nombre/{nombre}`    | Obtiene un producto por nombre    |
+| 🔍 GET     | `/data/productos/precio/{precio}`    | Busca productos por precio exacto |
+| 🔍 GET     | `/data/productos/categoria/{nombre}` | Busca productos por categoría     |
+| ➕ POST     | `/data/productos`                    | Crea un nuevo producto            |
+| ✏️ PUT     | `/data/productos/{id}`               | Actualiza un producto existente   |
+| 🗑️ DELETE | `/data/productos/{id}`               | Elimina un producto               |
+| ⚠️ GET     | `/data/productos/stock-bajo`         | Lista productos con stock bajo    |
+| Método     | Endpoint                           | Descripción                              |
+| ---------- | ---------------------------------- | ---------------------------------------- |
+| 📂 GET     | `/data/categorias`                 | Lista todas las categorías               |
+| 📂 GET     | `/data/categorias/id/{id}`         | Obtiene una categoría por ID             |
+| 📂 GET     | `/data/categorias/nombre/{nombre}` | Obtiene una categoría por nombre         |
+| 🔗 GET     | `/data/categorias/con-productos`   | Lista categorías con productos asociados |
+| ➕ POST     | `/data/categorias`                 | Crea una nueva categoría                 |
+| ✏️ PUT     | `/data/categorias/{id}`            | Actualiza una categoría existente        |
+| 🗑️ DELETE | `/data/categorias/{id}`            | Elimina una categoría                    |
+| Método     | Endpoint                                 | Descripción                           |
+| ---------- | ---------------------------------------- | ------------------------------------- |
+| 📊 GET     | `/data/inventario`                       | Lista todos los inventarios           |
+| 📊 GET     | `/data/inventario/{id}`                  | Obtiene un inventario por ID          |
+| 🔍 GET     | `/data/inventario/producto/{productoId}` | Obtiene inventario de un producto     |
+| 🔢 GET     | `/data/inventario/cantidad/{cantidad}`   | Lista inventarios con cantidad exacta |
+| ⚠️ GET     | `/data/inventario/stock-bajo`            | Lista inventarios con stock bajo      |
+| 📈 GET     | `/data/inventario/stock-alto`            | Lista inventarios con stock alto      |
+| ➕ POST     | `/data/inventario`                       | Crea un nuevo inventario              |
+| ✏️ PUT     | `/data/inventario/{id}`                  | Actualiza un inventario existente     |
+| 🗑️ DELETE | `/data/inventario/{id}`                  | Elimina un inventario                 |
+
+## 📋 Test
+- Se adjunto una carpeta llamada pruebas dentro de la carpeta documentacion con los test aprobados
 
 ## 📊 Casos de Uso del Sistema
 
