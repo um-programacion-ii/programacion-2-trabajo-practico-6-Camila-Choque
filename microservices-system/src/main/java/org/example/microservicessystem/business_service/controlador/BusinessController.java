@@ -1,5 +1,4 @@
 package org.example.microservicessystem.business_service.controlador;
-import jakarta.validation.Valid;
 import org.example.microservicessystem.business_service.dto.ProductoDTO;
 import org.example.microservicessystem.business_service.dto.ProductoRequest;
 import org.example.microservicessystem.business_service.dto.InventarioDTO;
@@ -36,7 +35,7 @@ public class BusinessController {
 
     @PostMapping("/productos")
     @ResponseStatus(HttpStatus.CREATED)
-    public ProductoDTO crearProducto(@Valid @RequestBody ProductoRequest request) {
+    public ProductoDTO crearProducto(@RequestBody ProductoRequest request) {
         return productoBusinessService.crearProducto(request);
     }
 

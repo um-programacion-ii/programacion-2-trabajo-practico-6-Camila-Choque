@@ -25,17 +25,16 @@ class ProductoBusinessServiceTest {
 
     @Test
     void cuandoObtenerTodosLosProductos_entoncesRetornaLista() {
-        // Arrange
+
         List<ProductoDTO> productosEsperados = Arrays.asList(
                 new ProductoDTO(1L, "Producto 1", "Descripción 1", BigDecimal.valueOf(100), "Categoría 1", 10, false),
                 new ProductoDTO(2L, "Producto 2", "Descripción 2", BigDecimal.valueOf(200), "Categoría 2", 5, true));
 
         when(dataServiceClient.obtenerTodosLosProductos()).thenReturn(productosEsperados);
 
-        // Act
+
         List<ProductoDTO> resultado = productoBusinessService.obtenerTodosLosProductos();
 
-        // Assert
         assertNotNull(resultado);
         assertEquals(2, resultado.size());
         assertEquals("Producto 1", resultado.get(0).getNombre());
@@ -44,13 +43,13 @@ class ProductoBusinessServiceTest {
 
     @Test
     void cuandoCrearProductoConPrecioInvalido_entoncesLanzaExcepcion() {
-        // Arrange
+
         ProductoRequest request = new ProductoRequest();
         request.setNombre("Producto Test");
         request.setPrecio(BigDecimal.valueOf(-10));
         request.setStock(5);
 
-        // Act & Assert
+
         assertThrows(ValidacionNegocioException.class, () -> {
             productoBusinessService.crearProducto(request);
         });
